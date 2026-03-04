@@ -5,20 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skia Icon Preview</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Skia Icon Preview</h1>
+            
+            <h1><img src="favicon.svg" style="width: 50px; height: 50px;" alt="Skia Icon Preview Logo" class="logo"> Skia Icon Preview</h1>
             <p>Upload or paste a Skia format .icon file to preview it</p>
         </header>
 
         <div class="input-section">
             <div class="upload-area">
                 <label for="file-input" class="file-label">
-                    <span>📁 Upload .icon file</span>
+                    <span>Upload .icon file</span>
                     <input type="file" id="file-input" accept=".icon" />
                 </label>
+            </div>
+
+            <div class="examples-area">
+                <label>Or try an example:</label>
+                <div class="example-buttons">
+                    <button class="btn-small" data-example="example.icon">Basic Icon</button>
+                    <button class="btn-small" data-example="test-icons/colorful.icon">Colorful Icon</button>
+                </div>
             </div>
 
             <div class="textarea-section">

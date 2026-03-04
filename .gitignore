@@ -26,3 +26,6 @@ temp/
 .env
 .env.local
 .env.*.local
+
+# Local test directories
+test-icons/
