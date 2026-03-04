@@ -51,45 +51,6 @@ header p {
     margin-bottom: 25px;
 }
 
-.examples-area {
-    margin-bottom: 25px;
-}
-
-.examples-area label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #cbd5e1;
-}
-
-.example-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.btn-small {
-    padding: 8px 20px;
-    background: #334155;
-    color: #e4e4e7;
-    border: 1px solid #475569;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-small:hover {
-    background: #475569;
-    border-color: #3b82f6;
-    transform: translateY(-1px);
-}
-
-.btn-small:active {
-    transform: translateY(0);
-}
-
 .file-label {
     display: inline-block;
     padding: 15px 30px;

@@ -276,7 +276,6 @@ class SkiaIconApp {
         this.bgSelect = document.getElementById('bg-select');
         this.colorPicker = document.getElementById('color-picker');
         this.canvasContainer = document.getElementById('canvas-container');
-        this.exampleButtons = document.querySelectorAll('[data-example]');
     }
 
     attachEventListeners() {
@@ -285,14 +284,6 @@ class SkiaIconApp {
         this.sizeSlider.addEventListener('input', (e) => this.handleSizeChange(e));
         this.bgSelect.addEventListener('change', () => this.renderIcon());
         this.colorPicker.addEventListener('change', () => this.renderIcon());
-        
-        // Add listeners for example buttons
-        this.exampleButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const examplePath = e.target.getAttribute('data-example');
-                this.loadExample(examplePath);
-            });
-        });
     }
 
     async handleFileUpload(event) {
@@ -346,23 +337,6 @@ class SkiaIconApp {
             }
         } catch (error) {
             console.log('No sample icon found');
-        }
-    }
-
-    async loadExample(path) {
-        try {
-            const response = await fetch(path);
-            if (response.ok) {
-                const content = await response.text();
-                this.currentContent = content;
-                this.textArea.value = content;
-                this.renderIcon();
-            } else {
-                alert('Could not load example icon');
-            }
-        } catch (error) {
-            alert('Error loading example: ' + error.message);
-            console.error(error);
         }
     }
 }
