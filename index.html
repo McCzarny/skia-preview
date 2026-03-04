@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skia Icon Preview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Skia Icon Preview</h1>
+            <p>Upload or paste a Skia format .icon file to preview it</p>
+        </header>
+
+        <div class="input-section">
+            <div class="upload-area">
+                <label for="file-input" class="file-label">
+                    <span>📁 Upload .icon file</span>
+                    <input type="file" id="file-input" accept=".icon" />
+                </label>
+            </div>
+
+            <div class="textarea-section">
+                <label for="icon-content">Or paste icon content:</label>
+                <textarea id="icon-content" placeholder="Paste your .icon file content here..."></textarea>
+                <button id="parse-btn" class="btn">Preview Icon</button>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-header">
+                <h2>Preview</h2>
+                <div class="controls">
+                    <label>
+                        Size: <input type="range" id="size-slider" min="50" max="500" value="200" step="10">
+                        <span id="size-value">200</span>px
+                    </label>
+                    <label>
+                        Background:
+                        <select id="bg-select">
+                            <option value="white">White</option>
+                            <option value="black">Black</option>
+                            <option value="gray">Gray</option>
+                            <option value="transparent" selected>Transparent</option>
+                        </select>
+                    </label>
+                    <label>
+                        Icon Color:
+                        <input type="color" id="color-picker" value="#000000">
+                    </label>
+                </div>
+            </div>
+            <div class="canvas-container" id="canvas-container">
+                <canvas id="preview-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Skia Icon Format Previewer</p>
+    </footer>
+
+    <script src="skia-parser.js"></script>
+</body>
+</html>
