@@ -21,8 +21,7 @@ class SkiaIconParser {
             if (parts.length === 0) continue;
 
             const command = parts[0];
-            const args = parts.slice(1).map(arg => {
-                // Check if it's a hex number (0x or 0X prefix)
+            const args = parts.slice(1).map(arg => {                // Check if it's a hex number (0x or 0X prefix)
                 if (typeof arg === 'string' && arg.toLowerCase().startsWith('0x')) {
                     return parseInt(arg, 16);
                 }
@@ -134,12 +133,14 @@ class SkiaIconParser {
                     break;
 
                 case 'QUADRATIC_BEZIER_TO':
+                case 'QUADRATIC_TO':
                     currentX = args[2];
                     currentY = args[3];
                     currentPath.pathData += `Q ${args[0]} ${args[1]}, ${args[2]} ${args[3]} `;
                     break;
 
                 case 'R_QUADRATIC_BEZIER_TO':
+                case 'R_QUADRATIC_TO':
                     currentX += args[2];
                     currentY += args[3];
                     currentPath.pathData += `q ${args[0]} ${args[1]}, ${args[2]} ${args[3]} `;
